@@ -1,4 +1,8 @@
 <?php
+// this is the profile page where you can edit the email
+// it starts the session and checks if a request is made
+// if it is then it processes the data and then changes the
+// email
 session_start();
 
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {

@@ -1,4 +1,7 @@
 <?php
+// this is the welcome page where the user can go
+// and see their username
+// There is a link to edit your profile
 session_start();
 
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {

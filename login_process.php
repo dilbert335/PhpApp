@@ -1,4 +1,7 @@
 <?php
+// This checks for a good username and password
+// After that, it will login the user by creating
+// a new session. THen it changes the location to welcome.php
 session_start();
 require 'db.php';
 

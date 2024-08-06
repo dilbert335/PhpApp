@@ -1,4 +1,7 @@
 <?php
+// this file loads the PDO and also creates the database
+// it adds some users in here
+// You can change this if you want different users
 $db = new PDO('sqlite:users.db');
 
 $db->exec("CREATE TABLE IF NOT EXISTS users (

@@ -1,4 +1,6 @@
 <?php
+//this file adds a new column email to the database
+
 $db = new PDO('sqlite:users.db');
 
 $db->exec("ALTER TABLE users ADD COLUMN email TEXT");
