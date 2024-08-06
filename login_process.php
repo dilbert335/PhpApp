@@ -1,15 +1,15 @@
 <?php
 session_start();
-
-$users = [
-    'user1' => 'password1',
-    'user2' => 'password2'
-];
+require 'db.php';
 
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-if (isset($users[$username]) && $users[$username] === $password) {
+$stmt = $pdo->prepare("SELECT password FROM users WHERE username = :username");
+$stmt->execute([':username' => $username]);
+$stored_password = $stmt->fetchColumn();
+
+if ($stored_password && password_verify($password, $stored_password)) {
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
     header('Location: welcome.php');
