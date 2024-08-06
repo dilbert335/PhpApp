@@ -18,11 +18,17 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
-    <p>Email: <?php echo htmlspecialchars($user['email']); ?></p>
-    <p><a href="profile.php">Go to Profile</a></p>
-    <a href="logout.php">Logout</a>
+    <div class="container">
+        <h1 class="mt-5">Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
+        <p class="mt-3">Email: <?php echo htmlspecialchars($user['email']); ?></p>
+        <a href="profile.php" class="btn btn-secondary">Go to Profile</a>
+        <a href="logout.php" class="btn btn-danger">Logout</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
